@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view("home");
+});
+
+Route::get('/films', function() {
+
+    $films = [
+    'Forrest Gump',
+    "L'attimo fuggente",
+    'Il Padrino',
+    'The Truman Show',
+    'Rocky',
+    "Schindler's List",
+    "Qualcuno volò sul nido del cuculo",
+    ];
+    return view("films.list", compact('films'));
 });
